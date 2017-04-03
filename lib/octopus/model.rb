@@ -87,7 +87,6 @@ If you are trying to scope everything to a specific shard, use Octopus.using ins
 
       def hijack_methods
         around_save :run_on_shard, :unless => lambda { self.class.custom_octopus_connection }
-        after_initialize :set_current_shard
 
         class_attribute :custom_octopus_connection
 
